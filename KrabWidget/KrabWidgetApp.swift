@@ -91,7 +91,7 @@ class AppState: ObservableObject {
     @Published var isOnboardingComplete: Bool {
         didSet { UserDefaults.standard.set(isOnboardingComplete, forKey: "onboardingComplete") }
     }
-    @Published var currentTheme: KrabTheme = .deepOcean
+    @Published var currentTheme: KrabTheme = .shivaRed
     
     let speechManager = SpeechManager()
     let voiceManager = VoiceManager()
@@ -108,6 +108,7 @@ class AppState: ObservableObject {
 
 // MARK: - Themes
 enum KrabTheme: String, CaseIterable {
+    case shivaRed = "Shiva Red"
     case deepOcean = "Deep Ocean"
     case coralReef = "Coral Reef"
     case midnight = "Midnight"
@@ -115,6 +116,7 @@ enum KrabTheme: String, CaseIterable {
     
     var primaryColor: Color {
         switch self {
+        case .shivaRed: return Color(red: 0.8, green: 0.2, blue: 0.15)
         case .deepOcean: return Color(red: 0.1, green: 0.4, blue: 0.6)
         case .coralReef: return Color(red: 0.9, green: 0.4, blue: 0.3)
         case .midnight: return Color(red: 0.2, green: 0.2, blue: 0.4)
@@ -124,6 +126,7 @@ enum KrabTheme: String, CaseIterable {
     
     var accentColor: Color {
         switch self {
+        case .shivaRed: return Color(red: 1.0, green: 0.4, blue: 0.3)
         case .deepOcean: return Color(red: 0.3, green: 0.7, blue: 0.9)
         case .coralReef: return Color(red: 1.0, green: 0.6, blue: 0.5)
         case .midnight: return Color(red: 0.5, green: 0.5, blue: 0.8)
@@ -133,10 +136,21 @@ enum KrabTheme: String, CaseIterable {
     
     var backgroundColor: Color {
         switch self {
+        case .shivaRed: return Color(red: 0.12, green: 0.05, blue: 0.05)
         case .deepOcean: return Color(red: 0.05, green: 0.1, blue: 0.15)
         case .coralReef: return Color(red: 0.15, green: 0.1, blue: 0.1)
         case .midnight: return Color(red: 0.08, green: 0.08, blue: 0.12)
         case .sunset: return Color(red: 0.12, green: 0.08, blue: 0.05)
+        }
+    }
+    
+    var emoji: String {
+        switch self {
+        case .shivaRed: return "🔴"
+        case .deepOcean: return "🔵"
+        case .coralReef: return "🟠"
+        case .midnight: return "🟣"
+        case .sunset: return "🟡"
         }
     }
 }
