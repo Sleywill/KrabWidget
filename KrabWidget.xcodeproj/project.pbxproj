@@ -7,60 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001 /* KrabWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101; };
-		002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102; };
-		003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103; };
-		004 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104; };
-		005 /* VoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105; };
-		006 /* TelegramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106; };
-		007 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107; };
-		008 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108; };
-		009 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109; };
-		010 /* ModularWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110; };
-		011 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111; };
-		012 /* GlassMorphism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112; };
-		013 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113; };
-		014 /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114; };
-		015 /* QuickActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115; };
-		016 /* CommandOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116; };
-		017 /* VoicePackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117; };
-		018 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120; };
-		019 /* CrabStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121; };
-		020 /* AIBackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122; };
-		021 /* EasterEggManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123; };
-		022 /* AIBackendSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124; };
+		A10000001 /* KrabWidgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000001; };
+		A10000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000002; };
+		A10000003 /* OpenClawConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000003; };
+		A10000004 /* WidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000004; };
+		A10000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000005; };
+		A10000010 /* KrabWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000010; };
+		A10000011 /* KrabStatusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000011; };
+		A10000012 /* WidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000004; };
+		A10000013 /* OpenClawConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000003; };
+		A10000014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A20000014; };
+		A10000020 /* KrabWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A30000002; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A40000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A50000001;
+			proxyType = 1;
+			remoteGlobalIDString = A30000002;
+			remoteInfo = KrabWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A60000001 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A10000020 /* KrabWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		100 /* KrabWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KrabWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		101 /* KrabWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrabWidgetApp.swift; sourceTree = "<group>"; };
-		102 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		104 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
-		105 /* VoiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceManager.swift; sourceTree = "<group>"; };
-		106 /* TelegramManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramManager.swift; sourceTree = "<group>"; };
-		107 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		108 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		109 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		110 /* ModularWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModularWindowManager.swift; sourceTree = "<group>"; };
-		111 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
-		112 /* GlassMorphism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassMorphism.swift; sourceTree = "<group>"; };
-		113 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		114 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
-		115 /* QuickActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsView.swift; sourceTree = "<group>"; };
-		116 /* CommandOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandOutputView.swift; sourceTree = "<group>"; };
-		117 /* VoicePackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePackView.swift; sourceTree = "<group>"; };
-		118 /* KrabWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KrabWidget.entitlements; sourceTree = "<group>"; };
-		119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		120 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		121 /* CrabStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrabStatusManager.swift; sourceTree = "<group>"; };
-		122 /* AIBackendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBackendManager.swift; sourceTree = "<group>"; };
-		123 /* EasterEggManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasterEggManager.swift; sourceTree = "<group>"; };
-		124 /* AIBackendSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBackendSettingsView.swift; sourceTree = "<group>"; };
+		A20000001 /* KrabWidgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrabWidgetApp.swift; sourceTree = "<group>"; };
+		A20000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20000003 /* OpenClawConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenClawConnection.swift; sourceTree = "<group>"; };
+		A20000004 /* WidgetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetData.swift; sourceTree = "<group>"; };
+		A20000005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000007 /* KrabWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KrabWidget.entitlements; sourceTree = "<group>"; };
+		A20000010 /* KrabWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrabWidgetBundle.swift; sourceTree = "<group>"; };
+		A20000011 /* KrabStatusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KrabStatusWidget.swift; sourceTree = "<group>"; };
+		A20000014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A20000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A30000001 /* KrabWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KrabWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30000002 /* KrabWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KrabWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		200 /* Frameworks */ = {
+		A70000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70000002 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,113 +78,139 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		300 = {
+		A80000001 = {
 			isa = PBXGroup;
 			children = (
-				301 /* KrabWidget */,
-				302 /* Products */,
+				A80000002 /* KrabWidget */,
+				A80000003 /* KrabWidgetExtension */,
+				A80000004 /* Shared */,
+				A80000005 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		301 /* KrabWidget */ = {
+		A80000002 /* KrabWidget */ = {
 			isa = PBXGroup;
 			children = (
-				101 /* KrabWidgetApp.swift */,
-				102 /* ContentView.swift */,
-				303 /* Managers */,
-				304 /* Views */,
-				305 /* Components */,
-				113 /* Models.swift */,
-				103 /* Assets.xcassets */,
-				118 /* KrabWidget.entitlements */,
-				119 /* Info.plist */,
+				A20000001 /* KrabWidgetApp.swift */,
+				A80000006 /* Views */,
+				A80000007 /* Resources */,
+				A20000006 /* Info.plist */,
+				A20000007 /* KrabWidget.entitlements */,
 			);
 			path = KrabWidget;
 			sourceTree = "<group>";
 		};
-		302 /* Products */ = {
+		A80000003 /* KrabWidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
-				100 /* KrabWidget.app */,
+				A20000010 /* KrabWidgetBundle.swift */,
+				A20000011 /* KrabStatusWidget.swift */,
+				A80000008 /* Resources */,
+				A20000015 /* Info.plist */,
+			);
+			path = KrabWidgetExtension;
+			sourceTree = "<group>";
+		};
+		A80000004 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A20000003 /* OpenClawConnection.swift */,
+				A20000004 /* WidgetData.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A80000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A30000001 /* KrabWidget.app */,
+				A30000002 /* KrabWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		303 /* Managers */ = {
+		A80000006 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				104 /* SpeechManager.swift */,
-				105 /* VoiceManager.swift */,
-				106 /* TelegramManager.swift */,
-				110 /* ModularWindowManager.swift */,
-				114 /* HotkeyManager.swift */,
-				120 /* NotificationManager.swift */,
-				121 /* CrabStatusManager.swift */,
-				122 /* AIBackendManager.swift */,
-				123 /* EasterEggManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		304 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				107 /* ChatView.swift */,
-				108 /* SettingsView.swift */,
-				109 /* OnboardingView.swift */,
-				115 /* QuickActionsView.swift */,
-				116 /* CommandOutputView.swift */,
-				117 /* VoicePackView.swift */,
-				124 /* AIBackendSettingsView.swift */,
+				A20000002 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		305 /* Components */ = {
+		A80000007 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				111 /* WaveformView.swift */,
-				112 /* GlassMorphism.swift */,
+				A20000005 /* Assets.xcassets */,
 			);
-			path = Components;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A80000008 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20000014 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		400 /* KrabWidget */ = {
+		A90000001 /* KrabWidget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 500;
+			buildConfigurationList = AA0000001;
 			buildPhases = (
-				401 /* Sources */,
-				200 /* Frameworks */,
-				402 /* Resources */,
+				AB0000001 /* Sources */,
+				A70000001 /* Frameworks */,
+				AC0000001 /* Resources */,
+				A60000001 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD0000001 /* PBXTargetDependency */,
+			);
+			name = KrabWidget;
+			productName = KrabWidget;
+			productReference = A30000001 /* KrabWidget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A90000002 /* KrabWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0000002;
+			buildPhases = (
+				AB0000002 /* Sources */,
+				A70000002 /* Frameworks */,
+				AC0000002 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = KrabWidget;
-			productName = KrabWidget;
-			productReference = 100 /* KrabWidget.app */;
-			productType = "com.apple.product-type.application";
+			name = KrabWidgetExtension;
+			productName = KrabWidgetExtension;
+			productReference = A30000002 /* KrabWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		600 /* Project object */ = {
+		A50000001 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					400 = {
+					A90000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A90000002 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 601;
+			buildConfigurationList = AE0000001;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -184,60 +218,71 @@
 				en,
 				Base,
 			);
-			mainGroup = 300;
-			productRefGroup = 302 /* Products */;
+			mainGroup = A80000001;
+			productRefGroup = A80000005 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				400 /* KrabWidget */,
+				A90000001 /* KrabWidget */,
+				A90000002 /* KrabWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		402 /* Resources */ = {
+		AC0000001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				003 /* Assets.xcassets in Resources */,
+				A10000005 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC0000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000014 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		401 /* Sources */ = {
+		AB0000001 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001 /* KrabWidgetApp.swift in Sources */,
-				002 /* ContentView.swift in Sources */,
-				004 /* SpeechManager.swift in Sources */,
-				005 /* VoiceManager.swift in Sources */,
-				006 /* TelegramManager.swift in Sources */,
-				007 /* ChatView.swift in Sources */,
-				008 /* SettingsView.swift in Sources */,
-				009 /* OnboardingView.swift in Sources */,
-				010 /* ModularWindowManager.swift in Sources */,
-				011 /* WaveformView.swift in Sources */,
-				012 /* GlassMorphism.swift in Sources */,
-				013 /* Models.swift in Sources */,
-				014 /* HotkeyManager.swift in Sources */,
-				015 /* QuickActionsView.swift in Sources */,
-				016 /* CommandOutputView.swift in Sources */,
-				017 /* VoicePackView.swift in Sources */,
-				018 /* NotificationManager.swift in Sources */,
-				019 /* CrabStatusManager.swift in Sources */,
-				020 /* AIBackendManager.swift in Sources */,
-				021 /* EasterEggManager.swift in Sources */,
-				022 /* AIBackendSettingsView.swift in Sources */,
+				A10000001 /* KrabWidgetApp.swift in Sources */,
+				A10000002 /* ContentView.swift in Sources */,
+				A10000003 /* OpenClawConnection.swift in Sources */,
+				A10000004 /* WidgetData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB0000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000010 /* KrabWidgetBundle.swift in Sources */,
+				A10000011 /* KrabStatusWidget.swift in Sources */,
+				A10000012 /* WidgetData.swift in Sources */,
+				A10000013 /* OpenClawConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AD0000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A90000002 /* KrabWidgetExtension */;
+			targetProxy = A40000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		700 /* Debug */ = {
+		AF0000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -300,7 +345,7 @@
 			};
 			name = Debug;
 		};
-		701 /* Release */ = {
+		AF0000002 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -355,7 +400,7 @@
 			};
 			name = Release;
 		};
-		702 /* Debug */ = {
+		AF0000003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -364,28 +409,26 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KrabWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KrabWidget;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "KrabWidget needs microphone access for voice commands";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "KrabWidget uses speech recognition to understand your voice commands";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 OpenClaw. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sleywill.KrabWidget;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclaw.krabwidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		703 /* Release */ = {
+		AF0000004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -394,22 +437,72 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = KrabWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KrabWidget;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "KrabWidget needs microphone access for voice commands";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "KrabWidget uses speech recognition to understand your voice commands";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 OpenClaw. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sleywill.KrabWidget;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclaw.krabwidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AF0000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = KrabWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KrabWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 OpenClaw. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclaw.krabwidget.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AF0000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = KrabWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KrabWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 OpenClaw. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.openclaw.krabwidget.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -418,25 +511,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		500 /* Build configuration list for PBXNativeTarget "KrabWidget" */ = {
+		AE0000001 /* Build configuration list for PBXProject "KrabWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				702 /* Debug */,
-				703 /* Release */,
+				AF0000001 /* Debug */,
+				AF0000002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		601 /* Build configuration list for PBXProject "KrabWidget" */ = {
+		AA0000001 /* Build configuration list for PBXNativeTarget "KrabWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				700 /* Debug */,
-				701 /* Release */,
+				AF0000003 /* Debug */,
+				AF0000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0000002 /* Build configuration list for PBXNativeTarget "KrabWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF0000005 /* Debug */,
+				AF0000006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 600 /* Project object */;
+	rootObject = A50000001 /* Project object */;
 }
