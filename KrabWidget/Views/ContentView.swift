@@ -54,8 +54,9 @@ struct OnboardingView: View {
     @EnvironmentObject var connection: OpenClawConnection
     @Binding var showingSetup: Bool
     @State private var botToken = ""
-    @State private var openClawEndpoint = ""
-    @State private var selectedTab = 0
+    @State private var openClawEndpoint = "http://127.0.0.1:18789"
+    @State private var openClawToken = ""
+    @State private var selectedTab = 1  // Default to OpenClaw tab
     @State private var isConnecting = false
     @State private var showError = false
     
@@ -101,7 +102,7 @@ struct OnboardingView: View {
                     if selectedTab == 0 {
                         TelegramSetupView(botToken: $botToken)
                     } else {
-                        OpenClawSetupView(endpoint: $openClawEndpoint)
+                        OpenClawSetupView(endpoint: $openClawEndpoint, token: $openClawToken)
                     }
                 }
                 .padding(.horizontal, 40)
@@ -155,7 +156,11 @@ struct OnboardingView: View {
     }
     
     private var canConnect: Bool {
-        !botToken.isEmpty || !openClawEndpoint.isEmpty
+        if selectedTab == 0 {
+            return !botToken.isEmpty
+        } else {
+            return !openClawEndpoint.isEmpty && !openClawToken.isEmpty
+        }
     }
     
     private func connect() {
@@ -165,8 +170,10 @@ struct OnboardingView: View {
         if selectedTab == 0 {
             connection.config.botToken = botToken
             connection.config.openClawEndpoint = nil
+            connection.config.openClawToken = nil
         } else {
             connection.config.openClawEndpoint = openClawEndpoint
+            connection.config.openClawToken = openClawToken
             connection.config.botToken = nil
         }
         
@@ -216,6 +223,7 @@ struct TelegramSetupView: View {
 
 struct OpenClawSetupView: View {
     @Binding var endpoint: String
+    @Binding var token: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -223,19 +231,27 @@ struct OpenClawSetupView: View {
                 .font(.headline)
                 .foregroundColor(.white)
             
-            TextField("http://localhost:3000", text: $endpoint)
+            TextField("http://127.0.0.1:18789", text: $endpoint)
+                .textFieldStyle(GlassTextFieldStyle())
+            
+            Text("Auth Token")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(.top, 8)
+            
+            SecureField("Enter your gateway token", text: $token)
                 .textFieldStyle(GlassTextFieldStyle())
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Connect to OpenClaw:")
+                Text("How to connect:")
                     .font(.caption)
                     .fontWeight(.medium)
                     .foregroundColor(.white.opacity(0.8))
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    StepText(number: 1, text: "Start OpenClaw gateway")
-                    StepText(number: 2, text: "Enter the endpoint URL above")
-                    StepText(number: 3, text: "Default: http://localhost:3000")
+                    StepText(number: 1, text: "Run: openclaw status")
+                    StepText(number: 2, text: "Copy the gateway URL (default 127.0.0.1:18789)")
+                    StepText(number: 3, text: "Find token in ~/.openclaw/openclaw.json")
                 }
             }
             .padding()
