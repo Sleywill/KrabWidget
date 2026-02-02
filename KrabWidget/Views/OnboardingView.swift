@@ -113,6 +113,10 @@ struct OnboardingView: View {
                 
                 Text("Your AI companion, always listening")
                     .font(.title3)
+                    .foregroundColor(.secondary)
+                
+                Text("Powered by OpenClaw")
+                    .font(.title3)
                     .foregroundColor(.gray)
                     .opacity(animateWelcome ? 1 : 0)
                     .offset(y: animateWelcome ? 0 : 20)

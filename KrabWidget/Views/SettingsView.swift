@@ -17,6 +17,12 @@ struct SettingsView: View {
                     Label("General", systemImage: "gear")
                 }
             
+            // AI Backend
+            AIBackendSettingsView()
+                .tabItem {
+                    Label("AI Backend", systemImage: "brain")
+                }
+            
             // Voice Settings
             voiceSettingsTab
                 .tabItem {
@@ -40,9 +46,20 @@ struct SettingsView: View {
                 .tabItem {
                     Label("Hotkeys", systemImage: "keyboard")
                 }
+            
+            // Easter Eggs
+            easterEggsTab
+                .tabItem {
+                    Label("Easter Eggs", systemImage: "egg.fill")
+                }
         }
-        .frame(width: 550, height: 450)
+        .frame(width: 600, height: 500)
         .padding()
+    }
+    
+    // MARK: - Easter Eggs Tab
+    private var easterEggsTab: some View {
+        EasterEggCollectionView()
     }
     
     // MARK: - General Settings

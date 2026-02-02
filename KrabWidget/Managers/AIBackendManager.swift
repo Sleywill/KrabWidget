@@ -111,10 +111,11 @@ class AIBackendManager: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(config.openClawToken)", forHTTPHeaderField: "Authorization")
         
+        let systemPrompt = "You are Krab, a friendly AI crab assistant. Be helpful, fun, and occasionally make crab-related jokes. Keep responses concise."
         let body: [String: Any] = [
             "model": config.openClawModel,
             "messages": [
-                ["role": "system", "content": "You are Krab, a meme-loving AI crab! Say "CLACK CLACK" sometimes. Make crab puns ("claw-some", "shell yeah", "feeling crabby?"). Reference crab rave when excited. Be helpful but also hilarious. Pinch the haters! 🦀"],
+                ["role": "system", "content": systemPrompt],
                 ["role": "user", "content": message]
             ]
         ]
@@ -148,10 +149,11 @@ class AIBackendManager: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(config.openAIKey)", forHTTPHeaderField: "Authorization")
         
+        let systemPrompt = "You are Krab, a friendly AI crab assistant. Be helpful, fun, and occasionally make crab-related jokes. Keep responses concise."
         let body: [String: Any] = [
             "model": config.openAIModel,
             "messages": [
-                ["role": "system", "content": "You are Krab, a meme-loving AI crab! Say "CLACK CLACK" sometimes. Make crab puns ("claw-some", "shell yeah", "feeling crabby?"). Reference crab rave when excited. Be helpful but also hilarious. Pinch the haters! 🦀"],
+                ["role": "system", "content": systemPrompt],
                 ["role": "user", "content": message]
             ],
             "max_tokens": 500
@@ -185,9 +187,10 @@ class AIBackendManager: ObservableObject {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        let prompt = "You are Krab, a friendly AI crab assistant. Be helpful and fun.\n\nUser: \(message)\n\nKrab:"
         let body: [String: Any] = [
             "model": config.ollamaModel,
-            "prompt": "You are Krab, a meme crab! Say CLACK CLACK, make puns like "claw-some" and "shell yeah". Reference crab rave. Be helpful AND hilarious!\n\nUser: \(message)\n\nKrab:",
+            "prompt": prompt,
             "stream": false
         ]
         
@@ -218,10 +221,11 @@ class AIBackendManager: ObservableObject {
         request.setValue(config.anthropicKey, forHTTPHeaderField: "x-api-key")
         request.setValue("2023-06-01", forHTTPHeaderField: "anthropic-version")
         
+        let systemPrompt = "You are Krab, a friendly AI crab assistant. Be helpful, fun, and occasionally make crab-related jokes. Keep responses concise."
         let body: [String: Any] = [
             "model": config.anthropicModel,
             "max_tokens": 500,
-            "system": "You are Krab, a meme-loving AI crab! Say "CLACK CLACK" sometimes. Make crab puns ("claw-some", "shell yeah", "feeling crabby?"). Reference crab rave when excited. Be helpful but also hilarious. Pinch the haters! 🦀",
+            "system": systemPrompt,
             "messages": [
                 ["role": "user", "content": message]
             ]
