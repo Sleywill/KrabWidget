@@ -80,6 +80,7 @@ class WidgetDataStore {
         return decoded
     }
     
+    @MainActor
     func updateFromConnection(_ connection: OpenClawConnection) {
         let mood: CrabMood
         switch connection.connectionStatus {
