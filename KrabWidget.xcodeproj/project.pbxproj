@@ -24,6 +24,11 @@
 		015 /* QuickActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115; };
 		016 /* CommandOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116; };
 		017 /* VoicePackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117; };
+		018 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120; };
+		019 /* CrabStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121; };
+		020 /* AIBackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122; };
+		021 /* EasterEggManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123; };
+		022 /* AIBackendSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,11 @@
 		117 /* VoicePackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePackView.swift; sourceTree = "<group>"; };
 		118 /* KrabWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KrabWidget.entitlements; sourceTree = "<group>"; };
 		119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		120 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		121 /* CrabStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrabStatusManager.swift; sourceTree = "<group>"; };
+		122 /* AIBackendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBackendManager.swift; sourceTree = "<group>"; };
+		123 /* EasterEggManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasterEggManager.swift; sourceTree = "<group>"; };
+		124 /* AIBackendSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBackendSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,10 @@
 				106 /* TelegramManager.swift */,
 				110 /* ModularWindowManager.swift */,
 				114 /* HotkeyManager.swift */,
+				120 /* NotificationManager.swift */,
+				121 /* CrabStatusManager.swift */,
+				122 /* AIBackendManager.swift */,
+				123 /* EasterEggManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -113,6 +127,7 @@
 				115 /* QuickActionsView.swift */,
 				116 /* CommandOutputView.swift */,
 				117 /* VoicePackView.swift */,
+				124 /* AIBackendSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +226,11 @@
 				015 /* QuickActionsView.swift in Sources */,
 				016 /* CommandOutputView.swift in Sources */,
 				017 /* VoicePackView.swift in Sources */,
+				018 /* NotificationManager.swift in Sources */,
+				019 /* CrabStatusManager.swift in Sources */,
+				020 /* AIBackendManager.swift in Sources */,
+				021 /* EasterEggManager.swift in Sources */,
+				022 /* AIBackendSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +378,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sleywil.KrabWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sleywill.KrabWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -388,7 +408,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sleywil.KrabWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sleywill.KrabWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

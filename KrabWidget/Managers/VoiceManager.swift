@@ -56,6 +56,15 @@ class VoiceManager: NSObject, ObservableObject {
         case .robotic:
             utterance.pitchMultiplier *= 0.8
             utterance.rate *= 0.85
+        case .meme:
+            utterance.pitchMultiplier *= 1.15
+            utterance.rate *= 1.05
+        case .greedy:
+            utterance.pitchMultiplier *= 0.85
+            utterance.rate *= 0.92
+        case .rave:
+            utterance.pitchMultiplier *= 1.2
+            utterance.rate *= 1.1
         default:
             break
         }

@@ -1,5 +1,6 @@
 import SwiftUI
 import AppKit
+import Combine
 
 @main
 struct KrabWidgetApp: App {
@@ -97,6 +98,8 @@ class AppState: ObservableObject {
     let telegramManager = TelegramManager()
     let windowManager = ModularWindowManager()
     let hotkeyManager = HotkeyManager.shared
+    
+    var cancellables = Set<AnyCancellable>()
     
     private init() {
         self.isOnboardingComplete = UserDefaults.standard.bool(forKey: "onboardingComplete")

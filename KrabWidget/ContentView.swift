@@ -7,19 +7,56 @@ struct ContentView: View {
     @EnvironmentObject var telegramManager: TelegramManager
     @EnvironmentObject var windowManager: ModularWindowManager
     
+    @StateObject private var statusManager = CrabStatusManager.shared
+    @StateObject private var notificationManager = NotificationManager.shared
+    @StateObject private var easterEggManager = EasterEggManager.shared
+    @StateObject private var aiBackendManager = AIBackendManager.shared
+    
+    @State private var barrelRollAngle: Double = 0
+    @State private var discoMode = false
+    
     var body: some View {
         Group {
             if !appState.isOnboardingComplete {
                 OnboardingView()
             } else {
                 MainView()
+                    .overlay(alignment: .topTrailing) {
+                        NotificationPopupView()
+                            .environmentObject(appState)
+                    }
+                    .overlay(alignment: .top) {
+                        CrabStatusWidget()
+                            .frame(maxWidth: 400)
+                            .padding(.top, 8)
+                            .environmentObject(appState)
+                    }
+                    .overlay {
+                        // Easter egg effects
+                        if easterEggManager.showConfetti {
+                            ConfettiView(isActive: easterEggManager.showConfetti)
+                        }
+                        if easterEggManager.showBubbles {
+                            BubbleView(isActive: easterEggManager.showBubbles)
+                        }
+                    }
             }
         }
+        .rotation3DEffect(.degrees(barrelRollAngle), axis: (x: 1, y: 0, z: 0))
+        .hueRotation(discoMode ? .degrees(360) : .degrees(0))
+        .animation(discoMode ? .linear(duration: 2).repeatForever(autoreverses: false) : .default, value: discoMode)
         .onAppear {
             setupManagers()
+            showWelcomeNotification()
         }
         .onReceive(NotificationCenter.default.publisher(for: .hotkeyPressed)) { _ in
             toggleListening()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .triggerBarrelRoll)) { _ in
+            performBarrelRoll()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .triggerDiscoMode)) { _ in
+            toggleDiscoMode()
         }
     }
     
@@ -32,20 +69,94 @@ struct ContentView: View {
         // Setup telegram message handler
         telegramManager.setOnNewMessage { message in
             voiceManager.notifyNewMessage(from: "Telegram")
+            notificationManager.push(KrabNotification(
+                type: .telegram,
+                title: "📱 New Telegram Message",
+                body: message.content,
+                icon: "paperplane.fill",
+                color: .blue
+            ))
+        }
+        
+        // Update status when speech manager state changes
+        speechManager.$isListening
+            .sink { listening in
+                if listening {
+                    statusManager.startListening()
+                } else {
+                    statusManager.setIdle()
+                }
+            }
+            .store(in: &appState.cancellables)
+    }
+    
+    private func showWelcomeNotification() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            notificationManager.showCrabMessage("Hey! I'm ready to help! Say 'Hey Krab' or press ⌘⌥Space to talk!")
+            
+            // Show daily tip after a delay
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                notificationManager.showDailyTip()
+            }
         }
     }
     
     private func toggleListening() {
         if speechManager.isListening {
             speechManager.stopListening()
+            statusManager.setIdle()
         } else {
             speechManager.startListening()
+            statusManager.startListening()
         }
     }
     
     private func handleSpeechCommand(_ text: String) {
-        // Process the command and respond
-        voiceManager.speak(text)
+        // Check for easter eggs first
+        if let _ = easterEggManager.checkPhrase(text) {
+            return
+        }
+        
+        // Update status
+        statusManager.setThinking(text)
+        
+        // Try AI backend if connected
+        if aiBackendManager.isConnected {
+            Task {
+                do {
+                    let response = try await aiBackendManager.sendMessage(text)
+                    await MainActor.run {
+                        voiceManager.speak(response)
+                        statusManager.setIdle()
+                    }
+                } catch {
+                    await MainActor.run {
+                        voiceManager.speak(text)
+                        statusManager.setIdle()
+                    }
+                }
+            }
+        } else {
+            // Fallback to local processing
+            voiceManager.speak(text)
+            statusManager.setIdle()
+        }
+    }
+    
+    private func performBarrelRoll() {
+        withAnimation(.easeInOut(duration: 1.0)) {
+            barrelRollAngle = 360
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            barrelRollAngle = 0
+        }
+    }
+    
+    private func toggleDiscoMode() {
+        discoMode = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            discoMode = false
+        }
     }
 }
 

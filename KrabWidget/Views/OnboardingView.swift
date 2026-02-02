@@ -89,9 +89,11 @@ struct OnboardingView: View {
     // MARK: - Step 0: Welcome
     private var welcomeStep: some View {
         VStack(spacing: 24) {
-            // Animated crab
-            Text("🦀")
-                .font(.system(size: 100))
+            // Animated crab mascot
+            Image("KrabMascot")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
                 .scaleEffect(showCrab ? 1.0 : 0.5)
                 .opacity(showCrab ? 1.0 : 0)
                 .animation(.spring(response: 0.8, dampingFraction: 0.6), value: showCrab)

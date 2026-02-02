@@ -53,6 +53,16 @@ struct VoicePack: Identifiable, Codable, Equatable {
     
     static let available: [VoicePack] = [
         VoicePack(
+            id: "meme_krab",
+            name: "Meme Krab",
+            personality: .meme,
+            voiceIdentifier: "com.apple.voice.compact.en-US.Samantha",
+            pitch: 1.25,
+            rate: 0.55,
+            volume: 1.0,
+            description: "CLACK CLACK! It's crab rave time! Talks like a real meme crab from the deep!"
+        ),
+        VoicePack(
             id: "friendly_krab",
             name: "Friendly Krab",
             personality: .friendly,
@@ -60,17 +70,17 @@ struct VoicePack: Identifiable, Codable, Equatable {
             pitch: 1.1,
             rate: 0.52,
             volume: 1.0,
-            description: "Warm and welcoming, like a friend who's always happy to see you!"
+            description: "Warm and welcoming! Occasional pinchy humor!"
         ),
         VoicePack(
-            id: "professional_crab",
-            name: "Professor Crab",
-            personality: .professional,
-            voiceIdentifier: "com.apple.voice.compact.en-GB.Daniel",
-            pitch: 0.95,
+            id: "mr_krabs",
+            name: "Money Krab",
+            personality: .greedy,
+            voiceIdentifier: "com.apple.voice.compact.en-US.Alex",
+            pitch: 0.85,
             rate: 0.48,
-            volume: 0.9,
-            description: "Sophisticated and knowledgeable, perfect for serious discussions."
+            volume: 1.0,
+            description: "Arr arr arr! I like money! Spongebob reference mode activated!"
         ),
         VoicePack(
             id: "playful_pinchy",
@@ -80,17 +90,17 @@ struct VoicePack: Identifiable, Codable, Equatable {
             pitch: 1.3,
             rate: 0.58,
             volume: 1.0,
-            description: "Energetic and fun! Ready for adventures!"
+            description: "Snip snap! Energetic crab ready for adventures!"
         ),
         VoicePack(
-            id: "calm_coral",
-            name: "Coral",
-            personality: .calm,
-            voiceIdentifier: "com.apple.voice.compact.en-AU.Karen",
-            pitch: 0.9,
-            rate: 0.42,
-            volume: 0.85,
-            description: "Soothing and relaxed, like gentle ocean waves."
+            id: "crab_rave",
+            name: "Crab Rave",
+            personality: .rave,
+            voiceIdentifier: "com.apple.voice.compact.en-US.Samantha",
+            pitch: 1.4,
+            rate: 0.62,
+            volume: 1.0,
+            description: "🦀🦀🦀 CRAB IS GONE 🦀🦀🦀 Party mode!"
         ),
         VoicePack(
             id: "robot_shell",
@@ -100,7 +110,7 @@ struct VoicePack: Identifiable, Codable, Equatable {
             pitch: 0.7,
             rate: 0.45,
             volume: 1.0,
-            description: "Beep boop. I am a very serious artificial crab intelligence."
+            description: "Beep boop. I am a very serious artificial crab intelligence. Pinch protocols engaged."
         )
     ]
 }
@@ -111,6 +121,9 @@ enum VoicePersonality: String, Codable {
     case playful
     case calm
     case robotic
+    case meme
+    case greedy
+    case rave
     
     var emoji: String {
         switch self {
@@ -119,6 +132,9 @@ enum VoicePersonality: String, Codable {
         case .playful: return "🎉"
         case .calm: return "🌊"
         case .robotic: return "🤖"
+        case .meme: return "🦀"
+        case .greedy: return "💰"
+        case .rave: return "🎵"
         }
     }
 }
