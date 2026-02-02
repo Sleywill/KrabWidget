@@ -100,7 +100,7 @@ All windows are:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Sleywil/KrabWidget.git
+git clone https://github.com/Sleywill/KrabWidget.git
 cd KrabWidget
 
 # Open in Xcode
@@ -197,7 +197,7 @@ MIT License - feel free to use, modify, and distribute!
 
 ## 🦀 Credits
 
-Made with ❤️ by [Sleywil](https://github.com/Sleywil)
+Made with ❤️ by [Sleywill](https://github.com/Sleywill)
 
 *"Every shell you break through makes you stronger!"* - Krab 🦀
 
@@ -205,6 +205,6 @@ Made with ❤️ by [Sleywil](https://github.com/Sleywil)
 
 <div align="center">
 
-**[⭐ Star this repo](https://github.com/Sleywil/KrabWidget)** if you like it!
+**[⭐ Star this repo](https://github.com/Sleywill/KrabWidget)** if you like it!
 
 </div>
