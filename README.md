@@ -1,6 +1,19 @@
-# 🦀 KrabWidget
+<p align="center">
+  <img src="assets/logo.png" alt="KrabWidget Logo" width="200">
+</p>
 
-<div align="center">
+<h1 align="center">🦀 KrabWidget</h1>
+<p align="center"><strong>Your AI companion, always listening</strong></p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#setup">Setup</a> •
+  <a href="#voice-packs">Voice Packs</a> •
+  <a href="#contributing">Contributing</a>
+</p>
+
+---
 
 ![KrabWidget Banner](https://img.shields.io/badge/🦀-KrabWidget-orange?style=for-the-badge&labelColor=1a1a2e)
 
